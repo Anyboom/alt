@@ -258,18 +258,43 @@ main > section { padding-block: var(--section-block); }
 .step h3 { font: 600 1.3rem/1.3 var(--font-serif); color: #fff; }
 .step p { margin-top: var(--space-2); max-width: 30ch; font-size: 0.98rem; color: rgba(241, 241, 239, 0.78); }
 
-/* about: серифный лид, леджер фактов, фото с тинтом */
-.about-grid {
+/* about: манифест на белой панели, цифра-водяной знак, лента фактов в три колонки */
+.about-manifest {
+  position: relative; overflow: hidden;
   margin-top: var(--heading-gap);
-  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: var(--grid-gap); align-items: start;
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: var(--panel-pad-lg);
+}
+.about-mark {
+  position: absolute; top: -0.22em; right: 0; z-index: 0;
+  font: 900 clamp(8rem, 17vw, 19rem)/0.8 var(--font-serif);
+  letter-spacing: -0.04em;
+  color: var(--bg);
+  pointer-events: none; user-select: none;
 }
 .about-lede {
+  position: relative; z-index: 1;
   font: 600 clamp(1.5rem, 1.2rem + 1.5vw, 2rem)/1.45 var(--font-serif);
-  color: var(--ink); max-width: 30ch; text-wrap: balance;
+  color: var(--ink); max-width: 34ch; text-wrap: balance;
 }
-.about-add { margin-top: var(--space-5); max-width: 52ch; color: var(--muted); }
-.about-facts { margin-top: var(--space-7); display: grid; max-width: 32rem; }
+.about-add {
+  position: relative; z-index: 1;
+  margin-top: var(--space-5); max-width: 52ch; color: var(--muted);
+}
+.about-facts {
+  position: relative; z-index: 1;
+  margin-top: var(--space-7);
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+  max-width: 64rem;
+}
+.about-fact dt { font-size: 0.95rem; color: var(--muted); }
+.about-fact dd {
+  margin: 0; margin-top: var(--space-2);
+  font: 600 1.2rem/1.35 var(--font-serif);
+  color: var(--ink);
+}
 .fact-row { display: flex; align-items: baseline; gap: var(--space-2); padding-block: var(--space-2); }
 .fact-row dt { font-size: 0.95rem; color: var(--muted); }
 .fact-row .dots {
@@ -281,24 +306,6 @@ main > section { padding-block: var(--section-block); }
   margin: 0;
   font: 600 1.05rem/1.35 var(--font-serif);
   color: var(--ink); text-align: right;
-}
-.about-media { display: grid; gap: var(--space-4); margin: 0; }
-.about-media figure { margin: 0; }
-.about-media .ph { position: relative; overflow: hidden; border-radius: var(--radius); }
-.about-media img {
-  width: 100%; height: clamp(240px, 32vh, 340px); object-fit: cover; display: block;
-}
-.about-media .ph-second { height: clamp(150px, 20vh, 210px); }
-/* ментоловая плёнка: кадр укладывается в палитру баннера */
-.about-media .ph::after {
-  content: ""; position: absolute; inset: 0;
-  background: rgba(61, 74, 54, 0.12);
-  pointer-events: none;
-}
-.about-media figcaption { margin-top: var(--space-2); font-size: 0.85rem; color: var(--muted); }
-@media (hover: hover) {
-  .about-media img { transition: transform 0.5s ease; }
-  .about-media figure:hover img { transform: scale(1.03); }
 }
 
 /* faq: каждая пара «вопрос–ответ» — отдельная карточка */
@@ -428,7 +435,6 @@ main > section { padding-block: var(--section-block); }
   font-size: var(--fs-small); color: #948e82;
 }
 .footer__legal a { color: inherit; }
-.footer__credits { display: block; margin-top: var(--space-1); max-width: 90ch; }
 
 /* ===== phone ===== */
 @media (max-width: 900px) {
@@ -459,7 +465,8 @@ main > section { padding-block: var(--section-block); }
     border-top: 1px solid rgba(241, 241, 239, 0.22); /* taste-skill-ignore — тот же разделитель шагов, перестроенный в стек на телефоне */
     padding-left: 0; padding-top: var(--space-5); margin-top: var(--space-2);
   }
-  .about-grid { grid-template-columns: 1fr; gap: var(--space-7); }
+  .about-manifest { padding: var(--space-6) var(--space-5); }
+  .about-facts { grid-template-columns: 1fr; gap: var(--space-4); }
   .find-panel { grid-template-columns: 1fr; grid-template-areas: "call" "visit" "map"; }
   .find-call, .find-visit { padding: var(--space-6) var(--space-5); }
   .find-map { min-height: 300px; }
