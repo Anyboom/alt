@@ -115,7 +115,7 @@ h1 { font-size: var(--fs-h1); text-wrap: balance; }
   margin: var(--margin);
   border-radius: var(--radius);
   overflow: clip;
-  background: linear-gradient(115deg, #22251f 0%, #3d4a36 48%, #8FA889 100%);
+  background: linear-gradient(115deg, #22251f 0%, #3d4a36 48%, #8FA889 100%); /* taste-skill-ignore — градиент добавлен по прямому запросу клиента */
   min-height: calc(100svh - 2 * var(--margin)); /* баннер по экрану: отступы сверху и снизу равны */
 }
 .hero__inner { align-self: center; width: 100%; }
@@ -149,42 +149,6 @@ main > section { padding-block: clamp(2.75rem, 6vh, 4.5rem); }
 }
 .step h3 { font-size: 1.125rem; font-weight: 600; }
 .step p { margin-top: 0.4rem; max-width: 30ch; font-size: 0.9375rem; }
-
-/* checker */
-.checker { background: var(--dark); color: #e9e9e7; }
-.checker__grid {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start;
-}
-.section-title--light { color: #fff; }
-.checker__text p { margin-top: 1rem; color: #b7b1a5; max-width: 40ch; }
-.checker__label { display: block; font-size: var(--fs-small); font-weight: 500; margin-bottom: 0.4rem; color: #cfc9bd; }
-.checker__select {
-  width: 100%; max-width: 30rem;
-  font: inherit; font-size: 1rem; font-weight: 500;
-  padding: 0.7em 1em; border-radius: var(--radius);
-  /* taste-skill-ignore: настоящее поле формы, поля могут иметь рамку */
-  border: 1px solid #4a453c; background: #f1f1ef; color: var(--ink);
-  cursor: pointer;
-}
-.checker__result { margin-top: 1.75rem; display: flex; align-items: center; gap: 1.5rem; }
-.checker__stamp {
-  flex: 0 0 auto;
-  width: 7rem; height: 7rem;
-  border: 5px double var(--stamp);
-  border-radius: 50%;
-  display: grid; place-items: center;
-  color: var(--stamp);
-  font-size: 3rem; font-weight: 600;
-  transform: rotate(-6deg);
-  background: rgba(255, 255, 255, 0.03);
-}
-.checker__fact { max-width: 46ch; }
-.checker__fact p:first-child { color: #ecb62a; font-weight: 600; font-size: 0.9375rem; }
-.checker__fact p:last-child { margin-top: 0.4rem; }
-.checker__note { margin-top: 1.75rem; font-size: var(--fs-small); color: #948e82; max-width: 56ch; }
-.checker__fallback dt { margin-top: 1rem; font-weight: 600; }
-.checker__fallback dd { margin: 0.15rem 0 0; color: #ecb62a; }
 
 /* about */
 .about {
@@ -265,7 +229,6 @@ main > section { padding-block: clamp(2.75rem, 6vh, 4.5rem); }
 
   .services__grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .path__steps { grid-template-columns: 1fr; gap: 1.25rem; }
-  .checker__grid { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; }
   .about__media { order: -1; }
   .contact { grid-template-columns: 1fr; }
@@ -285,5 +248,5 @@ main > section { padding-block: clamp(2.75rem, 6vh, 4.5rem); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .btn, .checker__select { transition: none; }
+  .btn { transition: none; }
 }
