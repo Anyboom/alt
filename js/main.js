@@ -22,7 +22,7 @@ const initMenu = () => {
 const REVEAL_SELECTORS = [
   '.hero__text',
   '.section-title',
-  '.services-panel',
+  '.services-mosaic',
   '.path-panel',
   '.about-manifest',
   '.faq-sheet',

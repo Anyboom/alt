@@ -186,44 +186,26 @@ h1 { font-size: var(--fs-h1); text-wrap: balance; }
 section { scroll-margin-top: 4.5rem; }
 main > section { padding-block: var(--section-block); }
 
-/* services: белая панель, «леджер» услуг */
-.services-panel {
+/* services: мозаика плоских полей — главная услуга на ментоле во всю ширину */
+.services-mosaic {
   margin-top: var(--heading-gap);
-  background: var(--paper);
-  border-radius: var(--radius);
-  padding: var(--panel-pad) var(--panel-pad-x) var(--space-5);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
 }
-.service-featured {
-  background: var(--tint);
-  border-radius: var(--radius);
-  padding: var(--panel-pad) var(--panel-pad-x);
-  margin-bottom: var(--space-5);
+.service-cell { border-radius: var(--radius); padding: var(--panel-pad); }
+.service-cell--feat { grid-column: 1 / -1; background: var(--tint); }
+.service-cell--a { background: var(--surface); }
+.service-cell--b { background: var(--paper); }
+.service-cell--wide { grid-column: 1 / -1; }
+.service-cell h3 {
+  font: 700 clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem)/1.2 var(--font-serif);
+  letter-spacing: -0.01em;
+  color: var(--ink); max-width: 24ch;
 }
-.service-tag {
-  font-size: 0.84rem; font-weight: 600;
-  letter-spacing: 0.07em; text-transform: uppercase;
-  color: var(--deep);
-}
-.service-featured h3 {
-  margin-top: var(--space-3);
-  font: 700 clamp(1.5rem, 1.2rem + 1.4vw, 2rem)/1.25 var(--font-serif);
-  color: var(--ink); max-width: 26ch;
-}
-.service-featured p { margin-top: var(--space-3); max-width: 56ch; color: var(--muted); }
-.service-row {
-  display: flex; align-items: baseline; gap: var(--space-2);
-  padding: var(--space-3) var(--space-2); margin-inline: calc(var(--space-2) * -1);
-  border-radius: var(--radius);
-  transition: background 0.15s ease;
-}
-.service-row:hover { background: var(--bg); }
-.service-row h3 { font: 600 1.15rem/1.35 var(--font-serif); color: var(--ink); flex: none; max-width: 44%; }
-.service-row .dots {
-  flex: 1; min-width: 1.2rem;
-  border-bottom: 1px dotted var(--rule); /* taste-skill-ignore — точечный «леджер» — ключевой приём направления editorial-report */
-  transform: translateY(-0.28em);
-}
-.service-row p { flex: none; width: min(44%, 40ch); font-size: 0.97rem; color: var(--muted); }
+.service-cell--feat h3 { font-size: clamp(2rem, 1.6rem + 2vw, 3rem); }
+.service-cell p { margin-top: var(--space-3); max-width: 48ch; color: var(--muted); }
+.service-note { color: var(--muted); }
+.service-note + h3 { margin-top: var(--space-2); }
 
 /* path: зелёная панель-эхо баннера с монограммой */
 .path-panel {
@@ -453,11 +435,8 @@ main > section { padding-block: var(--section-block); }
   .hero__text { padding: var(--space-5) 0 clamp(var(--space-7), 5vh, var(--space-9)); max-width: none; }
   .hero__text h1 { font-size: clamp(1.75rem, 5.5vw, 3rem); }
 
-  .services-panel { padding-inline: var(--space-4); }
-  .service-row { flex-wrap: wrap; row-gap: var(--space-1); }
-  .service-row .dots { display: none; }
-  .service-row h3 { max-width: none; flex-basis: 100%; }
-  .service-row p { width: auto; flex-basis: 100%; }
+  .services-mosaic { grid-template-columns: 1fr; }
+  .service-cell { padding: var(--space-5) var(--space-4); }
   .path__steps { grid-template-columns: 1fr; }
   .step { padding-right: 0; }
   .step + .step {
