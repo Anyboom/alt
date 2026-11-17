@@ -1,0 +1,7 @@
+.taste-skill/
+before-mirror/
+node_modules/
+.DS_Store
+assets/
+logo.svg
+*.Zone.Identifier
