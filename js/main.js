@@ -25,7 +25,7 @@ const REVEAL_SELECTORS = [
   '.services-panel',
   '.path-panel',
   '.about-text', '.about-media',
-  '.faq-panel',
+  '.faq-sheet',
   '.find-panel',
 ];
 
