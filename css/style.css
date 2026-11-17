@@ -24,11 +24,8 @@
   --container: 1320px;
   --margin: clamp(0.5rem, 1.2vw, 0.75rem);
 
-  /* --- радиусы: 4 размера на весь макет --- */
-  --radius: 4px;                              /* кнопки, навигация, леджер-строки */
-  --radius-md: 12px;                          /* превью, вложенные карточки */
-  --radius-lg: 18px;                          /* панели-аккордеоны, фото, featured */
-  --radius-xl: clamp(1.4rem, 2.6vw, 2.2rem);  /* крупные панели-эхо баннера */
+  /* --- радиус: единый стандарт для всего макета, как у .hero --- */
+  --radius: 4px;
 
   /* --- шкала отступов, базовый шаг 4px --- */
   --space-1: 0.25rem;   /* 4 */
@@ -193,12 +190,12 @@ main > section { padding-block: var(--section-block); }
 .services-panel {
   margin-top: var(--heading-gap);
   background: var(--paper);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   padding: var(--panel-pad) var(--panel-pad-x) var(--space-5);
 }
 .service-featured {
   background: var(--tint);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   padding: var(--panel-pad) var(--panel-pad-x);
   margin-bottom: var(--space-5);
 }
@@ -216,7 +213,7 @@ main > section { padding-block: var(--section-block); }
 .service-row {
   display: flex; align-items: baseline; gap: var(--space-2);
   padding: var(--space-3) var(--space-2); margin-inline: calc(var(--space-2) * -1);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   transition: background 0.15s ease;
 }
 .service-row:hover { background: var(--bg); }
@@ -232,7 +229,7 @@ main > section { padding-block: var(--section-block); }
 .path-panel {
   position: relative; overflow: hidden;
   background: linear-gradient(150deg, #22251f 0%, #3d4a36 68%, #46593e 100%);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius);
   color: #f1f1ef;
   padding: var(--panel-pad-lg);
 }
@@ -287,7 +284,7 @@ main > section { padding-block: var(--section-block); }
 }
 .about-media { display: grid; gap: var(--space-4); margin: 0; }
 .about-media figure { margin: 0; }
-.about-media .ph { position: relative; overflow: hidden; border-radius: var(--radius-lg); }
+.about-media .ph { position: relative; overflow: hidden; border-radius: var(--radius); }
 .about-media img {
   width: 100%; height: clamp(240px, 32vh, 340px); object-fit: cover; display: block;
 }
@@ -308,7 +305,7 @@ main > section { padding-block: var(--section-block); }
 .faq-panel {
   margin-top: var(--heading-gap);
   background: var(--paper);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   padding: var(--space-2) var(--panel-pad-x) var(--space-3);
 }
 .faq-panel summary {
@@ -340,7 +337,7 @@ details[open] > .faq-a { animation: faq-in 0.35s ease both; }
   position: relative; overflow: hidden;
   margin-top: var(--heading-gap);
   background: var(--paper);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius);
   padding: var(--panel-pad-lg);
   display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: clamp(var(--space-7), 4vw, 3.5rem);
@@ -368,12 +365,12 @@ details[open] > .faq-a { animation: faq-in 0.35s ease both; }
 .find-actions { margin-top: var(--space-5); display: grid; gap: var(--space-2); justify-items: start; }
 .find-actions .btn {
   background: var(--deep); color: #f1f1ef;
-  border-radius: 999px; padding: 0.8em 1.6em;
+  border-radius: var(--radius); padding: 0.8em 1.6em;
 }
 .find-actions .btn:hover { background: var(--deep-dark); color: #fff; }
 .find-pill {
   display: inline-block; margin-left: calc(var(--space-3) * -1);
-  padding: var(--space-1) var(--space-3); border-radius: 999px;
+  padding: var(--space-1) var(--space-3); border-radius: var(--radius);
   font-size: 0.97rem; color: var(--deep); text-decoration: none;
   transition: background-color 0.18s ease;
 }
@@ -389,7 +386,7 @@ details[open] > .faq-a { animation: faq-in 0.35s ease both; }
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3);
 }
 .find-photos figure { margin: 0; }
-.find-photos .ph { position: relative; overflow: hidden; border-radius: var(--radius-md); }
+.find-photos .ph { position: relative; overflow: hidden; border-radius: var(--radius); }
 .find-photos img {
   width: 100%; height: clamp(150px, 15vw, 200px); object-fit: cover; display: block;
 }
