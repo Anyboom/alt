@@ -21,11 +21,12 @@ const initMenu = () => {
 
 const REVEAL_SELECTORS = [
   '.hero__text',
-  '.services .section-title', '.service',
-  '.path .section-title', '.section-lead', '.step',
-  '.about__text', '.about__media',
-  '.faq .section-title', '.faq__item',
-  '.contact__text', '.contact__info',
+  '.section-title',
+  '.services-panel',
+  '.path-panel',
+  '.about-text', '.about-media',
+  '.faq-panel',
+  '.find-panel',
 ];
 
 const initReveal = () => {

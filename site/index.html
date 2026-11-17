@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Zen+Antique&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Vollkorn:wght@600;700;900&family=Zen+Antique&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -63,29 +63,35 @@
   <!-- Услуги -->
   <section class="services container" id="services">
     <h2 class="section-title">Чем помогаем</h2>
-    <div class="services__grid">
-      <div class="service">
+    <div class="services-panel">
+      <div class="service-featured">
+        <p class="service-tag">Основная работа фирмы</p>
         <h3>Освобождение от призыва</h3>
-        <p>Разбираем медицинские документы, готовим заключения и&nbsp;добиваемся категории «В» на&nbsp;призывной комиссии.</p>
+        <p>Разбираем медицинские документы, готовим заключения и&nbsp;добиваемся категории «В» на&nbsp;призывной комиссии&nbsp;— без суда, когда это возможно.</p>
       </div>
-      <div class="service">
+      <div class="service-row">
         <h3>Отсрочки по здоровью и учёбе</h3>
+        <span class="dots" aria-hidden="true"></span>
         <p>Оформляем законные основания отсрочки и&nbsp;защищаем их при обжаловании.</p>
       </div>
-      <div class="service">
+      <div class="service-row">
         <h3>Военный билет после 27 лет</h3>
+        <span class="dots" aria-hidden="true"></span>
         <p>Получаем документ без лишних визитов и&nbsp;разбираем претензии военкомата.</p>
       </div>
-      <div class="service">
+      <div class="service-row">
         <h3>Обжалование решений</h3>
+        <span class="dots" aria-hidden="true"></span>
         <p>Жалуемся в&nbsp;вышестоящую комиссию и&nbsp;суд; решение приостанавливается.</p>
       </div>
-      <div class="service">
+      <div class="service-row">
         <h3>Защита прав военнослужащих</h3>
+        <span class="dots" aria-hidden="true"></span>
         <p>Консультируем действующих и&nbsp;запас: контракты, расчёты, споры с&nbsp;частью.</p>
       </div>
-      <div class="service">
+      <div class="service-row">
         <h3>Прочие юридические услуги</h3>
+        <span class="dots" aria-hidden="true"></span>
         <p>Регистрация и&nbsp;ликвидация юрлиц и&nbsp;ИП, представительство в&nbsp;суде.</p>
       </div>
     </div>
@@ -93,83 +99,105 @@
 
   <!-- Как мы работаем -->
   <section class="path container" id="path">
-    <h2 class="section-title">Как мы работаем</h2>
-    <p class="section-lead">Призыв&nbsp;— процедура из&nbsp;одиннадцати этапов: поликлиника, военкомат, больница, две комиссии. Мы&nbsp;ведём дело с&nbsp;первого шага до&nbsp;результата.</p>
-    <div class="path__steps">
-      <div class="step">
-        <h3>Документы</h3>
-        <p>Справки, выписки и&nbsp;акты собираем заранее&nbsp;— до&nbsp;повестки.</p>
-      </div>
-      <div class="step">
-        <h3>Освидетельствование</h3>
-        <p>Медкомиссия видит ваши диагнозы, а&nbsp;не&nbsp;общий анамнез.</p>
-      </div>
-      <div class="step">
-        <h3>Результат</h3>
-        <p>Категория годности и&nbsp;военный билет&nbsp;— либо решение суда.</p>
+    <div class="path-panel">
+      <span class="path-mark" aria-hidden="true">§</span>
+      <h2 class="section-title">Как мы работаем</h2>
+      <p class="path-lead">Призыв&nbsp;— процедура из&nbsp;одиннадцати этапов: поликлиника, военкомат, больница, две комиссии. Мы&nbsp;ведём дело с&nbsp;первого шага до&nbsp;результата.</p>
+      <div class="path__steps">
+        <div class="step">
+          <h3>Документы</h3>
+          <p>Справки, выписки и&nbsp;акты собираем заранее&nbsp;— до&nbsp;повестки.</p>
+        </div>
+        <div class="step">
+          <h3>Освидетельствование</h3>
+          <p>Медкомиссия видит ваши диагнозы, а&nbsp;не&nbsp;общий анамнез.</p>
+        </div>
+        <div class="step">
+          <h3>Результат</h3>
+          <p>Категория годности и&nbsp;военный билет&nbsp;— либо решение суда.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- О компании -->
   <section class="about container" id="about">
-    <div class="about__text">
-      <h2 class="section-title">О компании</h2>
-      <p class="about__lead">Юридическая компания «Альтернатива» с&nbsp;2010&nbsp;года ведёт дела призывников, офицеров запаса и&nbsp;военнослужащих по&nbsp;всей Тверской области. Юристы фирмы читают и&nbsp;историю болезни, и&nbsp;Федеральный закон&nbsp;— потому что специализация одна: защита прав на&nbsp;каждом этапе призыва.</p>
-      <dl class="about__facts">
-        <div><dt>Основана</dt><dd>2010</dd></div>
-        <div><dt>Город</dt><dd>Тверь</dd></div>
-        <div><dt>Специализация</dt><dd>военное право, клиническая медицина</dd></div>
-      </dl>
+    <h2 class="section-title">О компании</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-lede">Юридическая компания «Альтернатива» с&nbsp;2010&nbsp;года ведёт дела призывников, офицеров запаса и&nbsp;военнослужащих по&nbsp;всей Тверской области.</p>
+        <p class="about-add">Юристы фирмы читают и&nbsp;историю болезни, и&nbsp;Федеральный закон&nbsp;— потому что специализация одна: защита прав на&nbsp;каждом этапе призыва.</p>
+        <dl class="about-facts">
+          <div class="fact-row"><dt>Основана</dt><span class="dots" aria-hidden="true"></span><dd>2010</dd></div>
+          <div class="fact-row"><dt>Город</dt><span class="dots" aria-hidden="true"></span><dd>Тверь</dd></div>
+          <div class="fact-row"><dt>Специализация</dt><span class="dots" aria-hidden="true"></span><dd>военное право, клиническая медицина</dd></div>
+        </dl>
+      </div>
+      <div class="about-media">
+        <figure>
+          <div class="ph"><img src="assets/tver-volga-river-starovolzhsky-bridge-p7221261-2350.jpg" alt="Староволжский мост через Волгу в Твери" loading="lazy" width="960" height="640"></div>
+          <figcaption>Староволжский мост через Волгу</figcaption>
+        </figure>
+        <figure>
+          <div class="ph"><img class="ph-second" src="assets/25-2014-img-4687-e1.jpg" alt="Трехсвятская улица в Твери" loading="lazy" width="960" height="640"></div>
+          <figcaption>Трехсвятская улица</figcaption>
+        </figure>
+      </div>
     </div>
-    <figure class="about__media">
-      <img src="assets/tver-volga-river-starovolzhsky-bridge-p7221261-2350.jpg" alt="Староволжский мост через Волгу в Твери" loading="lazy" width="960" height="640">
-      <img class="about__media-second" src="assets/25-2014-img-4687-e1.jpg" alt="Трехсвятская улица в Твери" loading="lazy" width="960" height="640">
-    </figure>
   </section>
 
   <!-- Вопросы и ответы -->
   <section class="faq container" id="faq">
-    <h2 class="section-title">Вопросы и ответы</h2>
-    <div class="faq__list">
-      <div class="faq__item">
-        <h3>Что даёт категория «В»?</h3>
-        <p>Ограниченную годность: от&nbsp;призыва освобождают, зачисляют в&nbsp;запас и&nbsp;выдают военный билет. Категорию подтверждает призывная комиссия&nbsp;— иногда её приходится добиваться через вышестоящую комиссию или суд.</p>
-      </div>
-      <div class="faq__item">
-        <h3>Можно ли оспорить решение комиссии?</h3>
-        <p>Да. Жалоба подаётся в&nbsp;вышестоящую призывную комиссию или сразу в&nbsp;суд. До&nbsp;вынесения нового решения выполнение обжалованного решения приостанавливается.</p>
-      </div>
-      <div class="faq__item">
-        <h3>Как получить военный билет после 27 лет?</h3>
-        <p>После 27&nbsp;лет вас уже не&nbsp;призывают, но&nbsp;военный билет обязаны выдать. На&nbsp;практике военкомат запрашивает объяснения пропуска призывов&nbsp;— в&nbsp;разговоре с&nbsp;ним лучше приходить с&nbsp;юристом.</p>
-      </div>
-      <div class="faq__item">
-        <h3>Чем грозит неявка по повестке?</h3>
-        <p>Административной ответственностью по&nbsp;ст.&nbsp;21.5 КоАП. Систематическое уклонение от&nbsp;призыва&nbsp;— уже уголовная ст.&nbsp;328 УК&nbsp;РФ. Если явиться не&nbsp;можете, сообщите об&nbsp;этом письменно.</p>
-      </div>
+    <h2 class="section-title">Вопросы и&nbsp;ответы</h2>
+    <div class="faq-panel">
+      <details open>
+        <summary>Что даёт категория «В»?</summary>
+        <p class="faq-a">Ограниченную годность: от&nbsp;призыва освобождают, зачисляют в&nbsp;запас и&nbsp;выдают военный билет. Категорию подтверждает призывная комиссия&nbsp;— иногда её приходится добиваться через вышестоящую комиссию или суд.</p>
+      </details>
+      <details>
+        <summary>Можно ли оспорить решение комиссии?</summary>
+        <p class="faq-a">Да. Жалоба подаётся в&nbsp;вышестоящую призывную комиссию или сразу в&nbsp;суд. До&nbsp;вынесения нового решения выполнение обжалованного решения приостанавливается.</p>
+      </details>
+      <details>
+        <summary>Как получить военный билет после 27 лет?</summary>
+        <p class="faq-a">После 27&nbsp;лет вас уже не&nbsp;призывают, но&nbsp;военный билет обязаны выдать. На&nbsp;практике военкомат запрашивает объяснения пропуска призывов&nbsp;— в&nbsp;разговоре с&nbsp;ним лучше приходить с&nbsp;юристом.</p>
+      </details>
+      <details>
+        <summary>Чем грозит неявка по повестке?</summary>
+        <p class="faq-a">Административной ответственностью по&nbsp;ст.&nbsp;21.5 КоАП. Систематическое уклонение от&nbsp;призыва&nbsp;— уже уголовная ст.&nbsp;328 УК&nbsp;РФ. Если явиться не&nbsp;можете, сообщите об&nbsp;этом письменно.</p>
+      </details>
     </div>
   </section>
 
   <!-- Контакты -->
   <section class="contact container" id="contact">
-    <div class="contact__text">
-      <h2 class="section-title">Контакты</h2>
-      <p class="contact__sentence">Приходите на&nbsp;консультацию с&nbsp;приписным свидетельством и&nbsp;медицинскими документами&nbsp;— разберём ваш случай в&nbsp;первый&nbsp;же визит.</p>
-      <a class="btn" href="mailto:info@altpriziv.ru?subject=Консультация&body=Телефон:%20">Записаться на консультацию</a>
-    </div>
-    <div class="contact__info">
-      <img class="contact__portrait" src="assets/23.jpg" alt="Дом на улице Вольного Новгорода, где находится офис" loading="lazy" width="340" height="340">
-      <figure class="contact__city">
-        <img src="assets/tver-volga-river-cruise-ship-mikhail-bulgakov.jpg" alt="Волга у Твери" loading="lazy" width="720" height="480">
-        <figcaption>Волга у Твери</figcaption>
-      </figure>
-      <dl class="contact__list">
-        <div><dt>Адрес</dt><dd>Тверь, ул.&nbsp;Вольного Новгорода, 21, этаж&nbsp;2, офис&nbsp;25</dd></div>
-        <div><dt>Телефон</dt><dd><a href="tel:+74822575007">(4822) 57-50-07</a></dd></div>
-        <div><dt>Почта</dt><dd><a href="mailto:info@altpriziv.ru">info@altpriziv.ru</a></dd></div>
-        <div><dt>Telegram</dt><dd><a href="https://t.me/altpriziv">@altpriziv</a></dd></div>
-      </dl>
+    <h2 class="section-title">Контакты</h2>
+    <div class="find-panel">
+      <span class="find-mark" aria-hidden="true">А</span>
+      <div class="find-call">
+        <p class="find-label">Записаться на консультацию</p>
+        <a class="find-phone" href="tel:+74822575007">(4822) 57-50-07</a>
+        <p class="find-note">Приходите на&nbsp;консультацию с&nbsp;приписным свидетельством и&nbsp;медицинскими документами&nbsp;— разберём ваш случай в&nbsp;первый&nbsp;же визит.</p>
+        <div class="find-actions">
+          <a class="btn" href="mailto:info@altpriziv.ru?subject=Консультация&body=Телефон:%20">Записаться на консультацию</a>
+          <a class="find-pill" href="mailto:info@altpriziv.ru">info@altpriziv.ru</a>
+          <a class="find-pill" href="https://t.me/altpriziv">Telegram — @altpriziv</a>
+        </div>
+      </div>
+      <div class="find-visit">
+        <p class="find-label">Приехать лично</p>
+        <p class="find-addr">Тверь, ул.&nbsp;Вольного Новгорода, 21, этаж&nbsp;2, офис&nbsp;25</p>
+        <div class="find-photos">
+          <figure>
+            <div class="ph"><img src="assets/23.jpg" alt="Дом на улице Вольного Новгорода, где находится офис" loading="lazy" width="340" height="340"></div>
+            <figcaption>Дом на ул. Вольного Новгорода</figcaption>
+          </figure>
+          <figure>
+            <div class="ph"><img src="assets/tver-volga-river-cruise-ship-mikhail-bulgakov.jpg" alt="Волга у Твери" loading="lazy" width="720" height="480"></div>
+            <figcaption>Волга у Твери</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 
