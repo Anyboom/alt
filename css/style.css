@@ -581,6 +581,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 
 /* ===== phone ===== */
 @media (max-width: 900px) {
+  .site-header { padding-top: 0; }
   .header__nav, .header__contacts, .header__row > .btn--sm { display: none; }
   .header__menu {
     display: inline-flex; align-items: center; gap: 0.5em;
@@ -625,6 +626,12 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   .service-row { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
   .service-cat { order: -1; }
 
+  /* списки услуг и статей: ровный воздух внутри панели (16px со всех сторон),
+     строки одинаковой высоты, пагинатор без лишнего зазора снизу */
+  .catalog__list, .blog__list { padding: var(--space-4); }
+  .post-row { padding-block: 1.1rem; }
+  .catalog__list .pager, .blog__list .pager { margin-top: 0; padding-block: var(--space-2); }
+
   .ticker__tag { display: none; }
 
   .brandcards { grid-template-columns: 1fr; }
@@ -636,7 +643,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   .apply__row { grid-template-columns: 1fr; }
   .find-map { min-height: 300px; }
 
-  .footer__grid { grid-template-columns: 1fr; gap: var(--space-7); }
+  .footer__grid { grid-template-columns: 1fr; gap: var(--space-7); padding-top: var(--space-6); }
   .footer__legal { flex-direction: column; gap: var(--space-3); }
 }
 
