@@ -1,7 +1,7 @@
 /* ЮК «Альтернатива» — лендинг в пластике dodobrands.io:
    кремовый фон, жирный гротеск Onest, панельные радиусы, пилюли,
-   счётчики в герое и бегущая лента. Палитра бренда: шалфейный зелёный,
-   горчичный акцент, красная книжечка военного билета. */
+   счётчики в герое и бегущая лента. Палитра бренда: шалфейный зелёный
+   (фон логотипа #8FA889 — он же акцент), красная книжечка военного билета. */
 
 /* ===== tokens ===== */
 :root {
@@ -12,10 +12,10 @@
   --muted: #6b675c;
   --rule: #e3ded2;          /* светлые линейки на светлом */
   --tint: #e9ede3;          /* ментоловый тинт из баннера */
-  --deep: #3d4a36;          /* глубокий зелёный из баннера */
-  --deep-dark: #22251f;
-  --accent: #ecb62a;        /* горчичный — основные кнопки, акценты */
-  --accent-dark: #d9a51e;
+  --deep: #3d4a36;          /* глубокий шалфейный — текстовые акценты на светлом */
+  --deep-dark: #22251f;     /* тёмный текст-ховер на светлом */
+  --accent: #8fa889;        /* шалфейный — фон логотипа; основные кнопки, акценты */
+  --accent-dark: #71906b;
   --stamp: #b5382d;         /* красная книжечка билета */
   --grow: #cbe29d;          /* мятные пилюли-подписи статистики */
   --grow-ink: #2c3829;
@@ -89,16 +89,16 @@ h1, .section-title { font-weight: 800; letter-spacing: -0.02em; line-height: 1.1
 h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 .section-title { font-size: var(--fs-h2); }
 
-/* кнопки: горчичные пилюли, как оранжевые на референсе */
+/* кнопки: шалфейные пилюли с белым текстом */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  background: var(--accent); color: var(--ink);
+  background: var(--accent); color: #fff;
   font-weight: 700; font-size: 1rem; line-height: 1;
   padding: 1.1em 1.75em; border: 0; border-radius: 999px;
   text-decoration: none; cursor: pointer;
   transition: background 0.18s ease, transform 0.15s ease;
 }
-.btn:hover { background: var(--accent-dark); }
+.btn:hover { background: #5d7d57; }
 .btn:active { transform: translateY(1px); }
 .btn--sm { font-size: 0.9375rem; padding: 0.95em 1.5em; }
 
@@ -112,7 +112,7 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 .header__row { display: flex; align-items: center; padding-block: var(--space-3); }
 .header__group { display: flex; align-items: center; gap: var(--space-6); }
 .header__brand { display: flex; align-items: center; }
-.header__brand img { width: var(--header-h); height: var(--header-h); }
+.header__brand img { width: var(--header-h); height: var(--header-h); border-radius: 12px; }
 .header__nav {
   display: flex; align-items: center; gap: var(--space-5);
   height: var(--header-h);
@@ -146,7 +146,7 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
   margin: var(--margin);
   border-radius: var(--radius-xl);
   overflow: clip;
-  background: linear-gradient(115deg, #22251f 0%, #3d4a36 48%, #8FA889 100%); /* taste-skill-ignore — градиент добавлен по прямому запросу клиента */
+  background: linear-gradient(115deg, #3a4a34 0%, #566a4d 48%, #8fa889 100%); /* taste-skill-ignore — градиент в шалфейной гамме логотипа */
   min-height: calc(100svh - 2 * var(--margin));
 }
 .hero :focus-visible { outline-color: var(--cream); }
@@ -188,7 +188,7 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 /* лента типичных дел: бегущая строка по нижней кромке баннера */
 .hero__ticker {
   border-top: 1px solid rgba(245, 243, 237, 0.16);
-  background: rgba(24, 26, 21, 0.35);
+  background: rgba(35, 45, 31, 0.35); /* шалфейно-тёмная подложка ленты */
 }
 .ticker__wrap { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2rem); padding-block: 0.9rem; }
 .ticker__tag { flex: none; font-size: 0.8125rem; font-weight: 700; color: rgba(245, 243, 237, 0.72); white-space: nowrap; }
@@ -285,7 +285,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 /* ===== path: тёмная панель-эхо баннера с таймлайном этапов ===== */
 .path-panel {
   margin-top: var(--heading-gap);
-  background: linear-gradient(150deg, #22251f 0%, #3d4a36 68%, #46593e 100%); /* taste-skill-ignore — панель-эхо баннера: тот же образ, что у .hero */
+  background: linear-gradient(150deg, #3a4a34 0%, #52664a 68%, #667d5d 100%); /* taste-skill-ignore — панель-эхо баннера: шалфейная гамма */
   border-radius: var(--radius-xl);
   color: var(--cream);
   padding: clamp(1.5rem, 4.5vw, 3.25rem);
@@ -402,7 +402,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 
 /* ===== cta: финальная тёмная панель перед футером ===== */
 .cta-panel {
-  background: linear-gradient(115deg, #22251f 0%, #3d4a36 62%, #46593e 100%); /* taste-skill-ignore — панель-эхо баннера */
+  background: linear-gradient(115deg, #3a4a34 0%, #52664a 62%, #667d5d 100%); /* taste-skill-ignore — панель-эхо баннера: шалфейная гамма */
   border-radius: var(--radius-xl);
   color: var(--cream);
   padding: clamp(2.5rem, 7vh, 4.5rem) var(--panel-pad-lg);
@@ -430,7 +430,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   padding-block: clamp(2.5rem, 6vh, 4rem);
 }
 .footer__brand { display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-3); align-items: center; }
-.footer__brand img { width: 36px; height: 36px; grid-row: span 2; }
+.footer__brand img { width: 36px; height: 36px; grid-row: span 2; border-radius: 9px; }
 .footer__name { font-family: var(--font-brand); font-weight: 400; font-size: 1.625rem; letter-spacing: 0.01em; }
 .footer__brand p:last-child { grid-column: 2; color: var(--muted); font-size: 0.9375rem; max-width: 34ch; }
 .footer__nav { display: grid; gap: var(--space-2); align-content: start; font-size: 0.9375rem; }
