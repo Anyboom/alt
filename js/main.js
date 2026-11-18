@@ -10,15 +10,35 @@ const initMenu = () => {
   const btn = document.querySelector(".header__menu");
   const sheet = document.getElementById("menu-sheet");
   if (!btn || !sheet) return;
+
+  const icon = btn.querySelector("iconify-icon");
+  const label = btn.querySelector(".header__menu-label");
+
+  const setOpen = (open) => {
+    btn.setAttribute("aria-expanded", String(open));
+    sheet.hidden = !open;
+    if (icon) icon.setAttribute("icon", open ? "ph:x-bold" : "ph:list-bold");
+    if (label) label.textContent = open ? "Закрыть" : "Меню";
+  };
+
   btn.addEventListener("click", () => {
-    const open = btn.getAttribute("aria-expanded") === "true";
-    btn.setAttribute("aria-expanded", String(!open));
-    sheet.hidden = open;
+    setOpen(btn.getAttribute("aria-expanded") !== "true");
   });
-  sheet.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
-    btn.setAttribute("aria-expanded", "false");
-    sheet.hidden = true;
-  }));
+
+  sheet.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+
+  /* закрытие по Escape с возвратом фокуса на кнопку */
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || btn.getAttribute("aria-expanded") !== "true") return;
+    setOpen(false);
+    btn.focus();
+  });
+
+  /* закрытие кликом мимо листа */
+  document.addEventListener("click", (e) => {
+    if (btn.getAttribute("aria-expanded") !== "true") return;
+    if (!sheet.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+  });
 };
 
 /* ---------- 2. Счётчики в блоке преимуществ ---------- */
