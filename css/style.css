@@ -191,7 +191,7 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
   display: flex; align-items: baseline; justify-content: space-between;
   gap: var(--space-5);
   padding-block: 1.1rem;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule); /* taste-skill-ignore — табличные строки каталога, линейки уместны */
 }
 .service-row:last-of-type { border-bottom: 0; }
 .service-row[hidden] { display: none; }
@@ -199,6 +199,53 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 .service-row p { margin-top: 0.35rem; color: var(--muted); font-size: 0.9375rem; max-width: 52ch; }
 .service-cat { flex: none; color: var(--deep); font-size: 0.8125rem; font-weight: 600; }
 .catalog-empty { padding: 1.5rem 0; color: var(--muted); }
+
+/* ===== блог (blog.html): список статей ===== */
+.blog-page { padding-block: var(--section-block); }
+.blog-head h1 {
+  font-size: clamp(1.75rem, 1.3rem + 1.5vw, 2.5rem);
+  font-weight: 800; letter-spacing: -0.02em;
+}
+.blog-lead { margin-top: var(--space-3); color: var(--muted); max-width: 52ch; }
+.blog__list {
+  margin-top: var(--heading-gap);
+  background: var(--paper);
+  border-radius: var(--radius-xl);
+  padding: clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2rem);
+}
+.post-row { padding-block: 1.35rem; border-bottom: 1px solid var(--rule); } /* taste-skill-ignore — табличные строки списка статей, линейки уместны */
+.post-row:last-of-type { border-bottom: 0; }
+.post-meta { display: flex; flex-wrap: wrap; gap: var(--space-3); color: var(--muted); font-size: 0.875rem; }
+.post-cat { color: var(--deep); font-weight: 600; }
+.post-title {
+  display: block; margin-top: 0.5rem;
+  font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.625rem);
+  font-weight: 800; letter-spacing: -0.01em; line-height: 1.15;
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.post-title:hover { color: var(--deep); }
+.post-excerpt { margin-top: 0.5rem; color: var(--muted); max-width: 62ch; }
+
+/* ===== страница статьи ===== */
+.article-page { padding-block: var(--section-block); }
+.article-head h1 {
+  margin-top: var(--space-3);
+  font-size: clamp(1.875rem, 1.3rem + 2.5vw, 3rem);
+  font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+  max-width: 24ch; text-wrap: balance;
+}
+.article-meta { display: flex; flex-wrap: wrap; gap: var(--space-3); color: var(--muted); font-size: 0.875rem; }
+.article-lead { margin-top: var(--space-4); color: var(--muted); font-size: var(--fs-lead); max-width: 44ch; }
+.article-body { margin-top: var(--heading-gap); max-width: 68ch; }
+.article-body h2 { margin-top: 2.4rem; font-size: 1.375rem; font-weight: 800; letter-spacing: -0.01em; }
+.article-body p { margin-top: 0.9rem; }
+.article-body ul { margin-top: 1rem; padding-left: 1.4em; display: grid; gap: 0.5rem; }
+.article-body li strong { font-weight: 700; }
+.article-note { margin-top: 2.5rem; color: var(--muted); font-size: 0.875rem; }
+.article-cta { margin-top: var(--section-block); }
+.article-more-title { margin-top: var(--section-block); font-size: 1.375rem; font-weight: 800; letter-spacing: -0.01em; }
+.article-more-title + .blog__list { margin-top: var(--heading-gap); }
 
 /* ===== hero ===== */
 /* баннер по экрану: отступы сверху и снизу равны, градиент в цветах проекта */
@@ -318,6 +365,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 }
 .services-extra h3 { font-size: 1.125rem; font-weight: 800; letter-spacing: -0.01em; }
 .services-extra p { margin-top: 0.3rem; color: var(--muted); max-width: 60ch; }
+.services-extra .find-pill { margin-top: var(--space-4); }
 
 /* ===== about: манифест + три принципа ===== */
 .about-lede {
