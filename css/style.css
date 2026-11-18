@@ -134,7 +134,7 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 .menu-sheet { display: none; }
 
 /* ===== светлая шапка (services.html): та же шапка на кремовом фоне ===== */
-.page-light.site-header { position: static; padding-top: 0; }
+.page-light.site-header { position: static; }
 .page-light .site-header :focus-visible { outline-color: var(--deep); }
 .page-light .header__nav a { color: var(--ink); }
 .page-light .header__nav a:hover { color: var(--deep); }
