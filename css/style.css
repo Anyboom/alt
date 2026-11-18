@@ -45,8 +45,8 @@
   --space-10: 4rem;
 
   /* семантический ритм */
-  --section-block: clamp(3.5rem, 9vh, 6.5rem);  /* вертикальный шаг между секциями */
-  --heading-gap: clamp(1.5rem, 4vh, 2.5rem);    /* заголовок секции → панель */
+  --section-block: clamp(2.25rem, 6vh, 4rem);    /* вертикальный шаг между секциями */
+  --heading-gap: clamp(1.25rem, 3vh, 2rem);      /* заголовок секции → панель */
   --panel-pad: clamp(1.25rem, 3vw, 2rem);
   --panel-pad-x: clamp(1.25rem, 3.5vw, 2.5rem);
   --panel-pad-lg: clamp(1.5rem, 4.5vw, 3rem);
@@ -164,37 +164,38 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 }
 .hero__actions { margin-top: var(--space-7); display: flex; align-items: center; gap: var(--space-6); flex-wrap: wrap; }
 
-/* статистика: крупные числа, пилюли-подписи — как в герое референса */
-.hero__stats {
+/* ===== advantages: мятные поля — панели тинта, тёмные цифры ===== */
+.advantages__grid {
+  margin-top: var(--heading-gap);
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  padding-block: clamp(1.25rem, 3.5vh, 2.5rem) clamp(1.5rem, 4vh, 3rem);
+  gap: var(--grid-gap);
+  align-items: start;
 }
-.stat { display: grid; gap: 0.4rem; justify-items: start; padding-inline: clamp(1rem, 2.5vw, 2.5rem); }
-.stat + .stat { border-left: 1px solid rgba(245, 243, 237, 0.18); }
-.stat__num {
-  font-size: var(--fs-stat); font-weight: 800; line-height: 1;
-  letter-spacing: -0.02em; color: #fff;
+.adv {
+  background: var(--tint);
+  border-radius: var(--radius-lg);
+  padding: var(--panel-pad-lg);
+  display: grid; gap: 0.45rem; justify-items: start; align-content: start;
+}
+.adv__num {
+  font-weight: 800; line-height: 0.9; letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
+  color: var(--deep-dark);
+  font-size: clamp(3rem, 1rem + 5vw, 5.5rem);
 }
-.stat__label { font-size: 1.0625rem; font-weight: 600; color: rgba(245, 243, 237, 0.9); }
-.stat__pill {
-  display: inline-flex; align-items: center;
-  margin-top: 0.35rem;
-  background: var(--grow); color: var(--grow-ink);
-  font-size: 0.8125rem; font-weight: 600;
-  padding: 0.42em 0.95em; border-radius: 999px;
-}
+.adv__title { font-size: 1.0625rem; font-weight: 800; letter-spacing: -0.01em; margin-top: 0.35rem; }
+.adv__note { color: var(--grow-ink); font-size: 0.9375rem; }
 
 /* лента типичных дел: бегущая строка по нижней кромке баннера */
 .hero__ticker {
-  border-top: 1px solid rgba(245, 243, 237, 0.16);
+  border-top: 1px solid rgba(245, 243, 237, 0.16); /* taste-skill-ignore — кромка ленты на тёмном баннере */
   background: rgba(35, 45, 31, 0.35); /* шалфейно-тёмная подложка ленты */
 }
 .ticker__wrap { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2rem); padding-block: 0.9rem; }
 .ticker__tag { flex: none; font-size: 0.8125rem; font-weight: 700; color: rgba(245, 243, 237, 0.72); white-space: nowrap; }
 .ticker__viewport {
   flex: 1; min-width: 0; overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); /* taste-skill-ignore — маска растворения краёв ленты, не визуальный градиент */
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
 .ticker__track { display: flex; width: max-content; animation: ticker 42s linear infinite; }
@@ -274,7 +275,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 }
 .about-add { margin-top: var(--space-5); color: var(--muted); max-width: 56ch; }
 .principles {
-  margin-top: clamp(2rem, 5vh, 3rem);
+  margin-top: var(--heading-gap);
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--grid-gap);
 }
@@ -295,7 +296,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 .path-lead { margin-top: var(--space-4); max-width: 56ch; color: rgba(245, 243, 237, 0.8); }
 
 /* чипы этапов */
-.timeline { margin-top: clamp(1.5rem, 4vh, 2.25rem); display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.timeline { margin-top: var(--heading-gap); display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .chip {
   background: rgba(245, 243, 237, 0.1);
   border: 1px solid rgba(245, 243, 237, 0.2);
@@ -393,7 +394,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   max-width: 20ch;
 }
 .find-facts { margin-top: var(--space-5); display: grid; max-width: 34rem; }
-.fact-row { display: flex; align-items: baseline; gap: var(--space-3); padding-block: 0.6rem; border-bottom: 1px solid var(--rule); }
+.fact-row { display: flex; align-items: baseline; gap: var(--space-3); padding-block: 0.6rem; border-bottom: 1px solid var(--rule); } /* taste-skill-ignore — табличные строки данных (dl), линейки уместны */
 .fact-row:last-child { border-bottom: 0; }
 .fact-row dt { font-size: 0.95rem; color: var(--muted); }
 .fact-row dd { margin: 0 0 0 auto; font-weight: 700; }
@@ -444,7 +445,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   display: flex; justify-content: space-between; gap: var(--space-7);
   padding-block: var(--space-5) var(--space-6);
   font-size: var(--fs-small); color: var(--muted);
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--rule); /* taste-skill-ignore — отделение юридической строки футера */
 }
 .footer__legal a { color: inherit; }
 .footer__legal a:hover { color: var(--ink); }
@@ -467,9 +468,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   .hero__inner { padding-top: clamp(6.5rem, 18vh, 9rem); }
   .hero__inner h1 { max-width: 16ch; }
 
-  .hero__stats { grid-template-columns: 1fr; }
-  .stat { padding-inline: 0; }
-  .stat + .stat { border-left: none; border-top: 1px solid rgba(245, 243, 237, 0.18); margin-top: var(--space-4); padding-top: var(--space-4); }
+  .advantages__grid { grid-template-columns: 1fr; }
 
   .ticker__tag { display: none; }
 

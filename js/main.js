@@ -21,7 +21,7 @@ const initMenu = () => {
   }));
 };
 
-/* ---------- 2. Счётчики статистики в герое ---------- */
+/* ---------- 2. Счётчики в блоке преимуществ ---------- */
 
 const animateCount = (el) => {
   const target = parseInt(el.dataset.count ?? el.textContent, 10);
@@ -44,7 +44,7 @@ const animateCount = (el) => {
 };
 
 const initCounters = () => {
-  const nums = [...document.querySelectorAll(".stat__num[data-count]")];
+  const nums = [...document.querySelectorAll(".adv__num[data-count]")];
   if (!nums.length) return;
   const done = new Set();
   const io = new IntersectionObserver((entries) => {
@@ -88,7 +88,7 @@ const initTimeline = () => {
 
 const REVEAL_SELECTORS = [
   ".hero__inner",
-  ".hero__stats",
+  ".advantages__grid",
   ".brandcards",
   ".services-extra",
   ".principles",
