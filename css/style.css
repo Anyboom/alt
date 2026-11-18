@@ -487,6 +487,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 }
 .find-pill:hover { background: #dbe4d2; }
 .find-pills { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
+.find-address { margin-top: var(--space-4); color: var(--grow-ink); font-size: 0.9375rem; max-width: 40ch; }
 
 /* мини-форма заявки: имя, телефон, вопрос → письмо в почтовый клиент */
 .apply { margin-top: var(--space-6); display: grid; gap: var(--space-4); }
