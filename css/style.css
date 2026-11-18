@@ -203,6 +203,27 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 .service-cat { flex: none; color: var(--deep); font-size: 0.8125rem; font-weight: 600; }
 .catalog-empty { padding: 1.5rem 0; color: var(--muted); }
 
+/* ===== пагинатор списков (services.html, blog.html): пилюли в тон фильтрам ===== */
+.pager {
+  display: flex; align-items: center; justify-content: center;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
+  padding-block: var(--space-3);
+}
+.pager[hidden] { display: none; }
+.pager__btn {
+  min-width: 2.5em;
+  padding: 0.5em 0.85em;
+  background: transparent; border: 0; border-radius: 999px;
+  font: inherit; font-size: 0.9375rem; font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+.pager__btn:hover:not(:disabled) { color: var(--ink); }
+.pager__btn:disabled { opacity: 0.35; cursor: default; }
+.pager__btn.is-active { background: var(--tint); color: var(--deep-dark); font-weight: 700; }
+
 /* ===== блог (blog.html): список статей ===== */
 .blog-page { padding-block: var(--section-block); }
 .blog-head h1 {
@@ -643,7 +664,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .btn, .chip, .find-phone, .find-pill, .cta-phone { transition: none; }
+  .btn, .chip, .find-phone, .find-pill, .cta-phone, .pager__btn { transition: none; }
   .ticker__track { animation: none; }
   .ticker__viewport { overflow-x: auto; }
   .menu-sheet:not([hidden]) { animation: none; }
