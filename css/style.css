@@ -220,7 +220,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 
 /* ===== services: две большие карточки-направления ===== */
 .brandcards {
-  margin-top: calc(var(--heading-gap) + 1.5rem); /* запас под артефакты, выходящие за край */
+  margin-top: var(--heading-gap);
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--grid-gap);
   align-items: stretch;
@@ -232,7 +232,6 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 }
 .brandcard--mint { background: var(--tint); }
 .brandcard--paper { background: var(--paper); }
-.brandcard__body { max-width: calc(100% - clamp(130px, 13vw, 180px)); }
 .brandcard h3 {
   font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
   font-weight: 800; letter-spacing: -0.02em; line-height: 1.15;
@@ -245,14 +244,6 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   background: var(--deep);
 }
 .brandcard__note { margin-top: var(--space-5); color: var(--muted); max-width: 44ch; }
-
-/* артефакт-«продукт», выходящий за верхний край карточки, как телефоны на референсе */
-.brandcard__render {
-  position: absolute; top: -34px; right: clamp(1.25rem, 3vw, 2rem);
-  width: clamp(150px, 14vw, 190px);
-}
-.brandcard__render svg { width: 100%; height: auto; }
-.brandcard__render text { font-family: var(--font); }
 
 /* широкая лента прочих услуг */
 .services-extra {
@@ -473,8 +464,6 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   .ticker__tag { display: none; }
 
   .brandcards { grid-template-columns: 1fr; }
-  .brandcard__body { max-width: none; }
-  .brandcard__render { position: static; width: 130px; margin: var(--space-5) 0 0 auto; }
 
   .principles { grid-template-columns: 1fr; }
 
@@ -487,7 +476,6 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 }
 
 @media (max-width: 560px) {
-  .brandcard__render { width: 112px; }
   .fact-row { flex-wrap: wrap; }
   .cta-actions .btn { width: 100%; }
 }
