@@ -48,10 +48,14 @@ const createPager = (nav, perPage, allRows) => {
   const render = () => {
     pages = Math.max(1, Math.ceil(visible.length / perPage));
     if (page > pages) page = pages;
-    const at = new Map(visible.map((row, i) => [row, i]));
+    const from = (page - 1) * perPage;
+    const to = page * perPage;
+    const last = visible.slice(from, to).at(-1);
     rows.forEach((row) => {
-      const i = at.get(row);
-      row.hidden = i === undefined || i < (page - 1) * perPage || i >= page * perPage;
+      const i = visible.indexOf(row);
+      row.hidden = i === -1 || i < from || i >= to;
+      /* последняя видимая строка без разделителя — CSS не может выбрать её сам */
+      row.classList.toggle("is-last", row === last);
     });
     renderNav();
   };
