@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Услуги — Альтернатива: юридическая помощь призывникам и военнослужащим в Твери</title>
+  <meta name="description" content="Полный список услуг ЮК «Альтернатива» по категориям: призывникам, военнослужащим и запасу, медицина и здоровье, прочие юридические услуги.">
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Zen+Antique&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main id="top">
+
+  <header class="site-header page-light">
+    <div class="container header__row">
+      <div class="header__group">
+        <a class="header__brand" href="index.html" aria-label="альтернатива — на главную">
+          <img src="assets/logo.svg" alt="Логотип «альтернатива»" width="44" height="44">
+        </a>
+        <nav class="header__nav" aria-label="Разделы">
+          <a href="services.html" aria-current="page">Услуги</a>
+          <a href="index.html#path">Как мы работаем</a>
+          <a href="index.html#about">О компании</a>
+          <a href="index.html#faq">Вопросы</a>
+          <a href="index.html#contact">Контакты</a>
+        </nav>
+      </div>
+      <div class="header__contacts">
+        <a class="header__mail" href="mailto:info@altpriziv.ru">info@altpriziv.ru</a>
+        <a class="header__phone" href="tel:+74822575007">(4822) 57-50-07</a>
+      </div>
+      <a class="btn btn--sm" href="index.html#contact">Консультация</a>
+      <button class="header__menu" type="button" aria-expanded="false" aria-controls="menu-sheet">Меню</button>
+    </div>
+    <div class="container menu-sheet" id="menu-sheet" hidden>
+      <a href="services.html">Услуги</a>
+      <a href="index.html#path">Как мы работаем</a>
+      <a href="index.html#about">О компании</a>
+      <a href="index.html#faq">Вопросы</a>
+      <a href="index.html#contact">Контакты</a>
+      <a href="mailto:info@altpriziv.ru">info@altpriziv.ru</a>
+      <a href="tel:+74822575007">(4822) 57-50-07</a>
+    </div>
+  </header>
+
+  <!-- Каталог услуг: фильтры категорий слева, список услуг справа -->
+  <section class="catalog-page">
+    <div class="container">
+      <div class="catalog-head">
+        <div>
+          <h1>Услуги</h1>
+          <p class="catalog-lead">Освобождение от призыва, отсрочки и военный билет, работа с&nbsp;действующими и&nbsp;запасом. Выберите категорию — список справа отфильтруется.</p>
+        </div>
+        <a class="btn" href="index.html#contact">Записаться на консультацию</a>
+      </div>
+
+      <div class="catalog">
+        <aside class="catalog__filters" aria-label="Категории услуг">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Все услуги <span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="priziv" aria-pressed="false">Призывникам <span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="sluzhba" aria-pressed="false">Военнослужащим и запасу <span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="med" aria-pressed="false">Медицина и здоровье <span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="other" aria-pressed="false">Прочие услуги <span class="count"></span></button>
+        </aside>
+
+        <div class="catalog__list">
+          <article class="service-row" data-cat="priziv">
+            <div>
+              <h3>Освобождение от призыва по здоровью (категория «В»)</h3>
+              <p>Разбираем медицинские документы, готовим заключения и&nbsp;добиваемся категории «В» на&nbsp;призывной комиссии&nbsp;— без суда, когда это возможно.</p>
+            </div>
+            <span class="service-cat">Призывникам</span>
+          </article>
+          <article class="service-row" data-cat="priziv">
+            <div>
+              <h3>Отсрочки по здоровью и учёбе</h3>
+              <p>Оформляем и&nbsp;продлеваем законные основания для&nbsp;отсрочки: по&nbsp;медицинским показаниям и&nbsp;по&nbsp;учёбе.</p>
+            </div>
+            <span class="service-cat">Призывникам</span>
+          </article>
+          <article class="service-row" data-cat="priziv">
+            <div>
+              <h3>Военный билет после 27 лет</h3>
+              <p>Помогаем получить военный билет после достижения предельного призывного возраста.</p>
+            </div>
+            <span class="service-cat">Призывникам</span>
+          </article>
+          <article class="service-row" data-cat="priziv">
+            <div>
+              <h3>Обжалование решений призывной комиссии</h3>
+              <p>Готовим жалобу в&nbsp;вышестоящую комиссию или&nbsp;иск в&nbsp;суд, если решение вынесено с&nbsp;нарушениями.</p>
+            </div>
+            <span class="service-cat">Призывникам</span>
+          </article>
+          <article class="service-row" data-cat="med priziv">
+            <div>
+              <h3>Разбор медицинских документов</h3>
+              <p>Анализируем карты, выписки и&nbsp;заключения врачей применительно к&nbsp;расписанию болезней.</p>
+            </div>
+            <span class="service-cat">Медицина и здоровье</span>
+          </article>
+          <article class="service-row" data-cat="med">
+            <div>
+              <h3>Подготовка заключений для ВВК</h3>
+              <p>Помогаем собрать документы и&nbsp;пройти военно-врачебную комиссию с&nbsp;корректной категорией годности.</p>
+            </div>
+            <span class="service-cat">Медицина и здоровье</span>
+          </article>
+          <article class="service-row" data-cat="med">
+            <div>
+              <h3>Обжалование категории годности</h3>
+              <p>Оспариваем решение медицинской комиссии: от&nbsp;независимой экспертизы до&nbsp;суда.</p>
+            </div>
+            <span class="service-cat">Медицина и здоровье</span>
+          </article>
+          <article class="service-row" data-cat="sluzhba">
+            <div>
+              <h3>Контракты и расчёты</h3>
+              <p>Проверяем условия контракта и&nbsp;положенные выплаты перед&nbsp;подписанием.</p>
+            </div>
+            <span class="service-cat">Военнослужащим и запасу</span>
+          </article>
+          <article class="service-row" data-cat="sluzhba">
+            <div>
+              <h3>Споры с воинской частью</h3>
+              <p>Защищаем права действующих военнослужащих в&nbsp;конфликтах с&nbsp;командованием.</p>
+            </div>
+            <span class="service-cat">Военнослужащим и запасу</span>
+          </article>
+          <article class="service-row" data-cat="sluzhba">
+            <div>
+              <h3>Права офицеров запаса</h3>
+              <p>Консультируем по&nbsp;воинскому учёту, статусу запаса и&nbsp;обязанностям при&nbsp;мобилизации.</p>
+            </div>
+            <span class="service-cat">Военнослужащим и запасу</span>
+          </article>
+          <article class="service-row" data-cat="sluzhba">
+            <div>
+              <h3>Расчёты при увольнении</h3>
+              <p>Проверяем начисления при&nbsp;увольнении со&nbsp;службы и&nbsp;добиваемся недоплаченного.</p>
+            </div>
+            <span class="service-cat">Военнослужащим и запасу</span>
+          </article>
+          <article class="service-row" data-cat="other">
+            <div>
+              <h3>Регистрация и ликвидация юрлиц и ИП</h3>
+              <p>Открываем, сопровождаем и&nbsp;закрываем юридические лица и&nbsp;индивидуальных предпринимателей.</p>
+            </div>
+            <span class="service-cat">Прочие услуги</span>
+          </article>
+          <article class="service-row" data-cat="other">
+            <div>
+              <h3>Представительство в суде</h3>
+              <p>Представляем интересы клиентов в&nbsp;судах Твери и&nbsp;Тверской области.</p>
+            </div>
+            <span class="service-cat">Прочие услуги</span>
+          </article>
+          <p class="catalog-empty" hidden>В этой категории пока нет услуг — выберите другую категорию.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <img src="assets/logo.svg" alt="" width="36" height="36">
+      <p class="footer__name">альтернатива</p>
+      <p>Юридическая помощь призывникам и&nbsp;военнослужащим в&nbsp;Твери с&nbsp;2010&nbsp;года.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Разделы">
+      <a href="services.html">Услуги</a>
+      <a href="index.html#path">Как мы работаем</a>
+      <a href="index.html#about">О компании</a>
+      <a href="index.html#faq">Вопросы</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <div class="footer__contacts">
+      <a href="tel:+74822575007">(4822) 57-50-07</a>
+      <a href="mailto:info@altpriziv.ru">info@altpriziv.ru</a>
+      <a href="https://t.me/altpriziv">t.me/altpriziv</a>
+    </div>
+  </div>
+  <div class="container footer__legal">
+    <p>ЮК «Альтернатива», 2010–2026. Все права защищены.</p>
+    <a href="#top">Наверх</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/services.js"></script>
+</body>
+</html>
