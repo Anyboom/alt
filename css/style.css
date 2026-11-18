@@ -247,7 +247,19 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 .post-excerpt { margin-top: 0.5rem; color: var(--muted); max-width: 62ch; }
 
 /* ===== страница статьи ===== */
-.article-page { padding-block: var(--section-block); }
+.article-page {
+  padding-block: var(--section-block);
+  /* горизонтальный отступ карточки статьи */
+  --article-inset: clamp(1rem, 3.75vw, 3.5rem);
+}
+/* статья целиком — одна большая белая карточка; CTA и «Другие статьи» — ниже, на фоне страницы */
+.article-card {
+  background: var(--paper);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 3vw, 2.5rem) var(--article-inset);
+}
+/* первый заголовок тела без своего отступа сверху: зазор от шапки задаёт margin у .article-body */
+.article-card .article-body > h2:first-child { margin-top: 0; }
 .article-head h1 {
   margin-top: var(--space-3);
   font-size: clamp(1.875rem, 1.3rem + 2.5vw, 3rem);
