@@ -117,11 +117,6 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
   display: flex; align-items: center; gap: var(--space-5);
   height: var(--header-h);
   font-size: 0.9375rem; font-weight: 600;
-  background: rgba(245, 243, 237, 0.12);
-  border: 1px solid rgba(245, 243, 237, 0.18);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 999px;
   padding: 0 var(--space-5);
 }
 .header__nav a { display: inline-flex; align-items: center; height: var(--header-h); text-decoration: none; color: var(--cream); transition: color 0.15s; }
