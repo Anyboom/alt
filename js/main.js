@@ -121,8 +121,31 @@ const initReveal = () => {
   }, 4000);
 };
 
+/* ---------- 5. Форма заявки: собирает письмо в почтовый клиент ---------- */
+
+const initApply = () => {
+  const form = document.getElementById("apply-form");
+  if (!form) return;
+  form.addEventListener("submit", (e) => {
+    const name = form.elements["name"].value.trim();
+    const phone = form.elements["phone"].value.trim();
+    const question = form.elements["question"].value.trim();
+    const body = [
+      name && `Имя: ${name}`,
+      phone && `Телефон: ${phone}`,
+      question && `Вопрос: ${question}`,
+    ].filter(Boolean).join("\n");
+    e.preventDefault();
+    window.location.href =
+      "mailto:info@altpriziv.ru?subject=" +
+      encodeURIComponent("Заявка на консультацию с сайта") +
+      "&body=" + encodeURIComponent(body);
+  });
+};
+
 /* ---------- init ---------- */
 initMenu();
 initCounters();
 initTimeline();
 initReveal();
+initApply();

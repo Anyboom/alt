@@ -242,20 +242,28 @@
         <h3 class="find-heading">Записаться на&nbsp;консультацию</h3>
         <a class="find-phone" href="tel:+74822575007">(4822) 57-50-07</a>
         <p class="find-note">Приходите на&nbsp;консультацию с&nbsp;приписным свидетельством и&nbsp;медицинскими документами&nbsp;— разберём ваш случай в&nbsp;первый&nbsp;же визит.</p>
-        <div class="find-actions">
-          <a class="btn" href="mailto:info@altpriziv.ru?subject=Консультация&body=Телефон:%20">Написать юристу</a>
+        <form class="apply" id="apply-form" method="post" action="mailto:info@altpriziv.ru" enctype="text/plain">
+          <div class="apply__row">
+            <div class="apply__field">
+              <label for="af-name">Имя</label>
+              <input id="af-name" name="name" type="text" autocomplete="name">
+            </div>
+            <div class="apply__field">
+              <label for="af-phone">Телефон</label>
+              <input id="af-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="apply__field">
+            <label for="af-q">Вопрос</label>
+            <textarea id="af-q" name="question" rows="3" placeholder="Коротко: повестка, медицинские документы, отсрочка…"></textarea>
+          </div>
+          <button class="btn" type="submit">Отправить заявку</button>
+          <p class="apply__hint">Нажимая «Отправить заявку», вы соглашаетесь на обработку персональных данных.</p>
+        </form>
+        <div class="find-pills">
           <a class="find-pill" href="mailto:info@altpriziv.ru">info@altpriziv.ru</a>
           <a class="find-pill" href="https://t.me/altpriziv">Telegram — @altpriziv</a>
         </div>
-      </div>
-      <div class="find-visit">
-        <h3 class="find-heading">Приехать лично</h3>
-        <p class="find-addr">Тверь, ул.&nbsp;Вольного Новгорода, 21</p>
-        <dl class="find-facts">
-          <div class="fact-row"><dt>Этаж и офис</dt><dd>2, офис 25</dd></div>
-          <div class="fact-row"><dt>Часы приёма</dt><dd>пн–пт, 9:00–18:00</dd></div>
-          <div class="fact-row"><dt>Суббота</dt><dd>по договорённости</dd></div>
-        </dl>
       </div>
       <div class="find-maprow">
         <div class="find-map">
