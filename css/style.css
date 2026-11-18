@@ -362,8 +362,9 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   background: var(--paper);
   border-radius: var(--radius-xl);
   overflow: clip;
-  display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  grid-template-areas: "call visit" "map map";
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "call map" "visit map";
 }
 .find-call { grid-area: call; background: var(--tint); padding: var(--panel-pad-lg); }
 .find-visit { grid-area: visit; padding: var(--panel-pad-lg); }
@@ -396,8 +397,8 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 .fact-row:last-child { border-bottom: 0; }
 .fact-row dt { font-size: 0.95rem; color: var(--muted); }
 .fact-row dd { margin: 0 0 0 auto; font-weight: 700; }
-.find-maprow { grid-area: map; }
-.find-map { position: relative; overflow: hidden; min-height: clamp(300px, 38vw, 460px); }
+.find-maprow { grid-area: map; height: 100%; }
+.find-map { position: relative; overflow: hidden; height: 100%; min-height: 300px; }
 .find-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* ===== cta: финальная тёмная панель перед футером ===== */
