@@ -144,7 +144,7 @@ h1 { font-size: var(--fs-h1); letter-spacing: -0.03em; line-height: 1.04; }
 .page-light .header__phone { color: var(--ink); }
 .page-light .menu-sheet a { color: var(--cream); }
 .page-light .menu-sheet :focus-visible { outline-color: var(--cream); }
-.page-light .header__menu { background: var(--tint); border-color: rgba(34, 37, 31, 0.14); color: var(--deep-dark); }
+.page-light .header__menu { background: var(--tint); color: var(--deep-dark); }
 .page-light .header__menu:hover { background: #dbe4d2; }
 
 /* ===== каталог услуг (services.html): фильтры слева, список справа ===== */
@@ -385,18 +385,51 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 }
 .brandcard__note { margin-top: var(--space-5); color: var(--muted); max-width: 44ch; }
 
-/* широкая лента прочих услуг */
+/* широкая лента прочих услуг: тёмный шалфей — зеркало героя */
 .services-extra {
   margin-top: var(--grid-gap);
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: var(--space-4) var(--space-6); flex-wrap: wrap;
-  background: var(--surface);
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-5) var(--space-8);
+  align-items: center;
+  background: linear-gradient(115deg, #3a4a34 0%, #566a4d 48%, #8fa889 100%); /* taste-skill-ignore — градиент в шалфейной гамме логотипа */
   border-radius: var(--radius-lg);
-  padding: var(--panel-pad);
+  padding: var(--panel-pad-lg);
+  color: var(--cream);
 }
-.services-extra h3 { font-size: 1.125rem; font-weight: 800; letter-spacing: -0.01em; }
-.services-extra p { margin-top: 0.3rem; color: var(--muted); max-width: 60ch; }
-.services-extra .find-pill { margin-top: var(--space-4); }
+.services-extra :focus-visible { outline-color: var(--cream); }
+.services-extra h3 {
+  font-size: clamp(1.375rem, 1rem + 1.6vw, 2.125rem);
+  font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+  color: var(--cream); text-wrap: balance;
+}
+.services-extra p {
+  margin-top: var(--space-3);
+  color: rgba(245, 243, 237, 0.78); /* taste-skill-ignore — приглушённый крем на тёмной панели */
+  max-width: 32ch; font-size: 0.9375rem;
+}
+.services-extra__side { display: grid; gap: var(--space-4); justify-items: start; }
+.services-extra__chips {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: var(--space-2);
+}
+.services-extra__chips li {
+  border: 1px solid rgba(245, 243, 237, 0.3); /* taste-skill-ignore — кромка чипа на тёмном */
+  border-radius: 999px;
+  padding: 0.5em 1.1em;
+  font-size: 0.875rem; font-weight: 600;
+  color: var(--cream);
+  white-space: nowrap;
+}
+/* пилюля-ссылка внутри тёмной ленты: текст, на hover — мягкая заливка без обводки */
+.services-extra .find-pill {
+  margin-left: 0;
+  color: #fff;
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+.services-extra .find-pill:hover {
+  background: rgba(245, 243, 237, 0.12); /* taste-skill-ignore — кремовая подложка на тёмном */
+  color: var(--cream);
+}
 
 /* ===== about: манифест + три принципа ===== */
 .about-lede {
@@ -430,17 +463,17 @@ main > section:not(.hero) { padding-block: var(--section-block); }
 /* чипы этапов */
 .timeline { margin-top: var(--heading-gap); display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .chip {
-  background: rgba(245, 243, 237, 0.1);
-  border: 1px solid rgba(245, 243, 237, 0.2);
+  background: rgba(245, 243, 237, 0.12);
+  border: 0;
   color: var(--cream);
   border-radius: 999px;
   padding: 0.68em 1.3em;
   font: inherit; font-size: 0.9375rem; font-weight: 600;
   cursor: pointer;
-  transition: background 0.18s ease, border-color 0.18s ease;
+  transition: background 0.18s ease;
 }
 .chip:hover { background: rgba(245, 243, 237, 0.2); }
-.chip.is-active { background: var(--accent); border-color: var(--accent); color: var(--ink); font-weight: 700; }
+.chip.is-active { background: var(--accent); color: var(--ink); font-weight: 700; }
 
 /* карточка активного этапа */
 .stages { margin-top: var(--space-5); }
@@ -598,8 +631,8 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   .header__menu {
     display: inline-flex; align-items: center; gap: 0.5em;
     margin-left: auto;
-    background: rgba(245, 243, 237, 0.12);
-    border: 1px solid rgba(245, 243, 237, 0.2);
+    background: rgba(245, 243, 237, 0.14);
+    border: 0;
     color: var(--cream); border-radius: 999px;
     font: inherit; font-size: 0.9375rem; font-weight: 600;
     height: var(--header-h); padding: 0 1.35em; cursor: pointer;
@@ -647,6 +680,7 @@ main > section:not(.hero) { padding-block: var(--section-block); }
   .ticker__tag { display: none; }
 
   .brandcards { grid-template-columns: 1fr; }
+  .services-extra { grid-template-columns: 1fr; align-items: start; }
 
   .principles { grid-template-columns: 1fr; }
 
